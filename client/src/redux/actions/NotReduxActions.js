@@ -1,7 +1,9 @@
 //Las pongo aca asi los localhost que hay que cambiarlos para el deploy quedan en 1 solo archivo
 
+const baseURL = 'https://ztreamgames-backend-production.up.railway.app'
+
 export const sendContactEmail = async (data) => {
-  return fetch(`http://localhost:3001/email/sendContact`, {
+  return fetch(`${baseURL}/email/sendContact`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -12,7 +14,7 @@ export const sendContactEmail = async (data) => {
 };
 
 export const changeImage = async (data, idUser) => {
-  return fetch(`http://localhost:3001/users/putUser/${idUser}`, {
+  return fetch(`${baseURL}/users/putUser/${idUser}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ image: data }),
@@ -23,7 +25,7 @@ export const changeImage = async (data, idUser) => {
 };
 
 export const changeImageBackground = async (data, idUser) => {
-  return fetch(`http://localhost:3001/users/putUser/${idUser}`, {
+  return fetch(`${baseURL}/users/putUser/${idUser}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ backgroundImage: data }),
@@ -34,7 +36,7 @@ export const changeImageBackground = async (data, idUser) => {
 };
 
 export const saveProfileConfig = async (data, idUser) => {
-  return fetch(`http://localhost:3001/users/putUser/${idUser}`, {
+  return fetch(`${baseURL}/users/putUser/${idUser}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),

@@ -7,12 +7,14 @@ import {
   dispatchActivity,
 } from "../slices/profileSlice";
 
+const baseURL = 'https://ztreamgames-backend-production.up.railway.app'
+
 export const cleanUpActionProfileSlice = () => (dispatch) => {
   return dispatch(cleanUpProfileSlice());
 };
 
 export const getProfileDetails = (id) => (dispatch) => {
-  fetch(`http://localhost:3001/users/users/${id}`, {
+  fetch(`${baseURL}/users/users/${id}`, {
     method: "GET",
   })
     .then((response) => response.json())
@@ -21,7 +23,7 @@ export const getProfileDetails = (id) => (dispatch) => {
 };
 
 export const getOtherUserProfileDetails = (id) => (dispatch) => {
-  fetch(`http://localhost:3001/users/users/${id}`, {
+  fetch(`${baseURL}/users/users/${id}`, {
     method: "GET",
   })
     .then((response) => response.json())
@@ -30,7 +32,7 @@ export const getOtherUserProfileDetails = (id) => (dispatch) => {
 };
 
 export const getFriendRequests = (id) => (dispatch) => {
-  fetch(`http://localhost:3001/users/users/${id}`, {
+  fetch(`${baseURL}/users/users/${id}`, {
     method: "GET",
   })
     .then((response) => response.json())
@@ -39,7 +41,7 @@ export const getFriendRequests = (id) => (dispatch) => {
 };
 
 export const getGamesOfUser = (data) => (dispatch) => {
-  return fetch(`http://localhost:3001/users/userGames`, {
+  return fetch(`${baseURL}/users/userGames`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),
@@ -50,7 +52,7 @@ export const getGamesOfUser = (data) => (dispatch) => {
 };
 
 export const getActivity = (data) => async (dispatch) => {
-  const a = await fetch(`http://localhost:3001/friends/gamesDataById`, {
+  const a = await fetch(`${baseURL}/friends/gamesDataById`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),
@@ -59,7 +61,7 @@ export const getActivity = (data) => async (dispatch) => {
     .then((resA) => resA)
     .catch((e) => console.log(e));
 
-  /*const b = await fetch(`http://localhost:3001/friends/gamesDataById`, {
+  /*const b = await fetch(`${baseURL}/friends/gamesDataById`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),

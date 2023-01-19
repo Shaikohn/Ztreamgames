@@ -1,7 +1,9 @@
 import { getAllUsers, userDetails } from "../slices/usersSlice";
 
+const baseURL = 'https://ztreamgames-backend-production.up.railway.app'
+
 export const getUsers = () => (dispatch) => {
-  fetch(`http://localhost:3001/users/users`, {
+  fetch(`${baseURL}/users/users`, {
     method: "GET",
   })
     .then((response) => response.json())
@@ -10,7 +12,7 @@ export const getUsers = () => (dispatch) => {
 };
 
 export const handleAdminPrivileges = (id) => {
-  return fetch(`http://localhost:3001/users/changeAdminStatus/${id}`, {
+  return fetch(`${baseURL}/users/changeAdminStatus/${id}`, {
     method: "POST",
   })
     .then((response) => response.json())
@@ -18,7 +20,7 @@ export const handleAdminPrivileges = (id) => {
 };
 
 export const handleBlockUser = (id) => {
-  return fetch(`http://localhost:3001/users/deleteUser/${id}`, {
+  return fetch(`${baseURL}/users/deleteUser/${id}`, {
     method: "DELETE",
   })
     .then((response) => response.json())
@@ -26,7 +28,7 @@ export const handleBlockUser = (id) => {
 };
 
 export const getUserDetails = (id) => (dispatch) => {
-  fetch(`http://localhost:3001/users/users/${id}`, {
+  fetch(`${baseURL}/users/users/${id}`, {
     method: "GET",
   })
     .then((response) => response.json())

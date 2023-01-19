@@ -7,12 +7,14 @@ import {
   searchedUsersInDB,
 } from "../slices/friendSlice";
 
+const baseURL = 'https://ztreamgames-backend-production.up.railway.app'
+
 export const cleanUpActionFriendSlice = () => (dispatch) => {
   return dispatch(cleanUpFriendSlice());
 };
 
 export const IncomingRequestsGetData = (data) => (dispatch) => {
-  return fetch(`http://localhost:3001/friends/friendrequestlist`, {
+  return fetch(`${baseURL}/friends/friendrequestlist`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),
@@ -23,7 +25,7 @@ export const IncomingRequestsGetData = (data) => (dispatch) => {
 };
 
 export const cancelFriendRequest = (data) => (dispatch) => {
-  return fetch(`http://localhost:3001/friends/cancelFriendRequest`, {
+  return fetch(`${baseURL}/friends/cancelFriendRequest`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),
@@ -34,7 +36,7 @@ export const cancelFriendRequest = (data) => (dispatch) => {
 };
 
 export const getFriendsImageAndID = (data) => (dispatch) => {
-  return fetch(`http://localhost:3001/friends/friendList`, {
+  return fetch(`${baseURL}/friends/friendList`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),
@@ -45,7 +47,7 @@ export const getFriendsImageAndID = (data) => (dispatch) => {
 };
 
 export const setInitialState = (data) => (dispatch) => {
-  return fetch(`http://localhost:3001/friends/relationship`, {
+  return fetch(`${baseURL}/friends/relationship`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),
@@ -56,7 +58,7 @@ export const setInitialState = (data) => (dispatch) => {
 };
 
 export const sendFriendRequest = (data) => (dispatch) => {
-  return fetch(`http://localhost:3001/friends/friendRequest`, {
+  return fetch(`${baseURL}/friends/friendRequest`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),
@@ -67,7 +69,7 @@ export const sendFriendRequest = (data) => (dispatch) => {
 };
 
 export const acceptFriendRequest = (data) => (dispatch) => {
-  return fetch(`http://localhost:3001/friends/aceptFriend`, {
+  return fetch(`${baseURL}/friends/aceptFriend`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),
@@ -78,7 +80,7 @@ export const acceptFriendRequest = (data) => (dispatch) => {
 };
 
 export const rejectFriendRequest = (data) => (dispatch) => {
-  return fetch(`http://localhost:3001/friends/rejectFriend`, {
+  return fetch(`${baseURL}/friends/rejectFriend`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),
@@ -89,7 +91,7 @@ export const rejectFriendRequest = (data) => (dispatch) => {
 };
 
 export const deleteFriend = (data) => (dispatch) => {
-  return fetch(`http://localhost:3001/friends/removeFriend`, {
+  return fetch(`${baseURL}/friends/removeFriend`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data }),
@@ -101,7 +103,7 @@ export const deleteFriend = (data) => (dispatch) => {
 
 export const searchUserInDatabase = (data) => (dispatch) => {
   return fetch(
-    `http://localhost:3001/friends/searchForMatches/${data.usernameInput}`,
+    `${baseURL}/friends/searchForMatches/${data.usernameInput}`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },

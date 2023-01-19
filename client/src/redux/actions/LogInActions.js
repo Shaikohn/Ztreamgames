@@ -1,8 +1,11 @@
 import { logIn } from "../../redux/slices/logInSlice";
 import axios from "axios";
+
+const baseURL = 'https://ztreamgames-backend-production.up.railway.app'
+
 export const LogInActionApi =
   (data, setloginData, loginData) => async (dispatch) => {
-    return fetch(`http://localhost:3001/auth`, {
+    return fetch(`${baseURL}/auth`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -31,7 +34,7 @@ export const GoogleLogIn = (res) => async (dispatch) => {
     headers: {
       "Content-Type": "application/json",
     },
-    url: "http://localhost:3001/auth/google",
+    url: `${baseURL}/auth/google`,
     data: { id_token: res.tokenId },
   }).then((response) => {
     const logindata = {

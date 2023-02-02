@@ -60,7 +60,6 @@ function SearchBar() {
   }, []);
 
   useEffect(() => {
-    console.log(icon.current.focus);
     icon.current.focus();
   }, []);
 

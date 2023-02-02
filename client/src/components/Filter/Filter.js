@@ -52,7 +52,6 @@ function Filtro({paginated}) {
 const [selectedPlatform,setSelectedPlatform]=useState(filtro.plataforms)
 const [selectedGenres,setSelectedGenres]  = useState(filtro.genres)
 
-console.log(selectedGenres)
   //Uso un use effect, para unicamente despatchar cuando el Filtro sea actualizado y no antes.
   useEffect(() => {
     dispatch(filterVideogames(filtro));

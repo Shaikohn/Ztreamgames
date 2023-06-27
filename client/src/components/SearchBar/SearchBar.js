@@ -81,7 +81,7 @@ function SearchBar() {
           id="buscarfiltro"
           onChange={(e) => handleName(e)}/><button type="reset"></button></form> */}
 
-      <form autocomplete="off">
+      <form autoComplete="off">
         <div class="finder">
           <div class="finder__outer">
             <div class="finder__inner">

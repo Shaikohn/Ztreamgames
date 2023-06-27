@@ -3,7 +3,7 @@ import { getAllUsers, userDetails } from "../slices/usersSlice";
 const baseURL = 'https://ztreamgames-backend-production.up.railway.app'
 
 export const getUsers = () => (dispatch) => {
-  fetch(`https://ztreamgames-backend-production.up.railway.app/users/users`, {
+  fetch(`${baseURL}/users/users`, {
     method: "GET",
   })
     .then((response) => response.json())
@@ -12,7 +12,7 @@ export const getUsers = () => (dispatch) => {
 };
 
 export const handleAdminPrivileges = (id) => {
-  return fetch(`https://ztreamgames-backend-production.up.railway.app/users/changeAdminStatus/${id}`, {
+  return fetch(`${baseURL}/users/changeAdminStatus/${id}`, {
     method: "POST",
   })
     .then((response) => response.json())
@@ -20,7 +20,7 @@ export const handleAdminPrivileges = (id) => {
 };
 
 export const handleBlockUser = (id) => {
-  return fetch(`https://ztreamgames-backend-production.up.railway.app/users/deleteUser/${id}`, {
+  return fetch(`${baseURL}/users/deleteUser/${id}`, {
     method: "DELETE",
   })
     .then((response) => response.json())
@@ -28,7 +28,7 @@ export const handleBlockUser = (id) => {
 };
 
 export const getUserDetails = (id) => (dispatch) => {
-  fetch(`https://ztreamgames-backend-production.up.railway.app/users/users/${id}`, {
+  fetch(`${baseURL}/users/users/${id}`, {
     method: "GET",
   })
     .then((response) => response.json())

@@ -29,8 +29,6 @@ export default function Rating() {
         },
     })
 
-    console.log(input)
-
     function handleReview(e) {
         if (e.target.value.length < 500 && e.target.value.length > 10) {
           setInput({
@@ -51,7 +49,7 @@ export default function Rating() {
     async function handleLike(e) {
         e.preventDefault()
         try {
-            await axios.post(`http://localhost:3001/reviews/likes/${id}`)
+            await axios.post(`https://ztreamgames-backend-production.up.railway.app/reviews/likes/${id}`)
             setLike(true)
             forceUpdate();
         }
@@ -63,7 +61,7 @@ export default function Rating() {
     async function handleDislike(e) {
         e.preventDefault()
         try {
-            await axios.post(`http://localhost:3001/reviews/dislikes/${id}`)
+            await axios.post(`https://ztreamgames-backend-production.up.railway.app/reviews/dislikes/${id}`)
             setDislike(true)
             forceUpdate();
         }
@@ -76,7 +74,7 @@ export default function Rating() {
         e.preventDefault()
         if(!input.review.error) {
             try {
-                await axios.post(`http://localhost:3001/reviews/${id}`, {
+                await axios.post(`https://ztreamgames-backend-production.up.railway.app/reviews/${id}`, {
           comments: input.review.value,
           author:
             JSON.parse(localStorage.getItem("user")).status === false

@@ -154,6 +154,9 @@ html, body {
     }
   }
   .play-button {
+    background: none;
+    border: none;
+    cursor: pointer;
     display: inline-block;
     width: 70px;
     height: 70px;

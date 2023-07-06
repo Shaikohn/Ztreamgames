@@ -197,7 +197,7 @@ export default function Card({ name, image, platforms,  genres, released, _id, r
                     // If option pre-render is enabled we assume all html/css is present for an optimal glare effect.
                     if (!glarePrerender)
                     // Create glare element
-                        $(this).append('<div class="js-tilt-glare"><div class="js-tilt-glare-inner"></div></div>');
+                        $(this).append('<div className="js-tilt-glare"><div className="js-tilt-glare-inner"></div></div>');
         
                     // Store glare selector if glare is enabled
                     this.glareElementWrapper = $(this).find(".js-tilt-glare");
@@ -333,31 +333,28 @@ export default function Card({ name, image, platforms,  genres, released, _id, r
         });
     }, [])
 
-    console.log(userDetails.purchasedGames)
-
-
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <Link to={`/videogames/${_id}`}>
-  <div class="card" style={{ 
+  <div className="card" style={{ 
       backgroundImage: `url(${image})` 
     }}>
-    <div class="card__content">
-      <a class="play-button">
+    <div className="card__content">
+      <button className="play-button">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50">
-          <path d="M42.7,42.7L25,50L7.3,42.7L0,25L7.3,7.3L25,0l17.7,7.3L50,25L42.7,42.7z" class="polygon"></path>
+          <path d="M42.7,42.7L25,50L7.3,42.7L0,25L7.3,7.3L25,0l17.7,7.3L50,25L42.7,42.7z" className="polygon"></path>
           <polygon points="32.5,25 21.5,31.4 21.5,18.6 "></polygon>
         </svg>
-      </a>
-      <div class="card__content--description">
-        <h3 class="roll-up">
+      </button>
+      <div className="card__content--description">
+        <h3 className="roll-up">
             
           <span><span>{name}</span><span>{name}</span></span>
           
           
         </h3>
         
-        <p class="text-reveal">
+        <p className="text-reveal">
           <span>
             <span>Price: {price}$</span>
             <span>Platforms: {platforms[0]}, {platforms[1]}</span>
@@ -367,14 +364,12 @@ export default function Card({ name, image, platforms,  genres, released, _id, r
           <span>Price: {price}$</span>
             <span>Platforms: {platforms[0]}, {platforms[1]}</span>
             <span>Rating: {rating}</span>
-            
           </span>
           
         </p>
         
       </div>
     </div>
-    
   </div>
 
   </Link>

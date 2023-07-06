@@ -14,7 +14,7 @@ export default function Details({ details }) {
     const dispatch = useDispatch();
     const { id } = useParams();
     const [reducerValue, forceUpdate] = useReducer((x) => x + 1, 0);
-    console.log(details)
+    
     useEffect(() => {
         dispatch(getById(id))
     }, [reducerValue, dispatch, id])
@@ -31,9 +31,8 @@ export default function Details({ details }) {
     }
 
     async function handleClick(reviewId) {
-        console.log("Este es id", id);
         try {
-          await axios.delete(`http://localhost:3001/reviews/${reviewId}`);
+          await axios.delete(`https://ztreamgames-backend-production.up.railway.app/reviews/${reviewId}`);
           forceUpdate();
         } catch (error) {
           console.log(error);
@@ -43,26 +42,25 @@ export default function Details({ details }) {
 
     return (
         <>
-        
-        <div class="container-02">
+        <div className="container-02">
             {/* <Particle /> */}
 		<h2>{details.name}</h2>
         <div className='reviewModal'>
         < Rating />
         </div>
          <Tilt> 
-		<div class="glassmorphic-card">
-			<div class="imgBox">
+		<div className="glassmorphic-card">
+			<div className="imgBox">
             <img alt={details?.name} className="image" src={details?.background_image} />
 			</div>
-			<div class="contentBox">
+			<div className="contentBox">
 				<h3>Price: {details.price}$</h3>
-				<p><div>
+				<div>
                     <p className="html"dangerouslySetInnerHTML={{ __html:details?.description}}/>
-                </div></p>
-                {details?.genres.length && details.genres.map((el, index) => {
+                </div>
+                {details?.genres.length && details.genres.map((el, i) => {
                     return(
-                    <a><span>{el}</span></a>)
+                    <a key={i}><span>{el}</span></a>)
                 })}
                     <div className='likesContainer'>
                     <GreenLike /> <p> {details?.likes} </p> <RedDisLike /> <p>{details?.dislikes}</p> 
@@ -70,7 +68,7 @@ export default function Details({ details }) {
 			</div>
 		</div>
         </Tilt> 
-		<p><span><p >{details?.platforms.length && details.platforms.join(', ') }</p></span></p>
+		<span><p>{details?.platforms.length && details.platforms.join(', ') }</p></span>
     {details.comments?.length === 0 ? <h1>No comments</h1> : <h1>Comments</h1>} 
           {details.comments?.map((c) => {
             return (

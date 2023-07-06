@@ -38,7 +38,7 @@ return (
                         console.log(values)
 
                         resetForm();
-                        axios.put('http://localhost:3001/auth/forgot-password', values)
+                        axios.put('https://ztreamgames-backend-production.up.railway.app/auth/forgot-password', values)
                         swal({
                             title: '',
                             text: 'Please check your inbox ',

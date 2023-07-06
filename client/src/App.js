@@ -84,11 +84,7 @@ function App() {
         <Route exact path={"/adminPanel"} component={AdminPanel}></Route>
         <Route exact path={"/videogame/add"} component={Add} />
         <Route exact path={"/edit/:id"} component={Edit} />
-        <Route
-          exact
-          path={"/adminPanel/purchaseOrders"}
-          component={PurchaseOrders}
-        />
+        <Route exact path={"/adminPanel/purchaseOrders"} component={PurchaseOrders} />
         <Route exact path={"/adminPanel/user"} component={Users} />
         <Route exact path={"/users/:id"} component={UserDetailsOptions} />
 
@@ -97,11 +93,7 @@ function App() {
             <Route exact path={"/adminPanel"} component={AdminPanel} />
             <Route exact path={"/videogame/add"} component={Add} />
             <Route exact path={"/edit/:id"} component={Edit} />
-            <Route
-              exact
-              path={"/adminPanel/purchaseOrders"}
-              component={PurchaseOrders}
-            />
+            <Route exact path={"/adminPanel/purchaseOrders"} component={PurchaseOrders} />
             <Route exact path={"/adminPanel/user"} component={Users} />
             <Route exact path={"/users/:id"} component={UserDetailsOptions} />
           </Switch>

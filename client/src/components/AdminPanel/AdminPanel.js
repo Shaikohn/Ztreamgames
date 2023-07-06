@@ -40,7 +40,7 @@ function AdminPanel() {
   } */
 
   async function handleDelete(e) {
-    await fetch(`http://localhost:3001/games/${e.target.value}`, {
+    await fetch(`https://ztreamgames-backend-production.up.railway.app/games/${e.target.value}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

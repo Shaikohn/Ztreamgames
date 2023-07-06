@@ -28,11 +28,11 @@ function SearchBar() {
     const finder = document.querySelector(".finder");
     const form = document.querySelector("form");
 
-    if (input) {
+    /* if (input) {
       input.addEventListener("focus", () => {
         finder.classList.add("active");
       });
-    }
+    } */
 
     if (input) {
       input.addEventListener("blur", () => {
@@ -82,12 +82,12 @@ function SearchBar() {
           onChange={(e) => handleName(e)}/><button type="reset"></button></form> */}
 
       <form autoComplete="off">
-        <div class="finder">
-          <div class="finder__outer">
-            <div class="finder__inner">
-              <div class="finder__icon" ref={icon}></div>
+        <div className="finder">
+          <div className="finder__outer">
+            <div className="finder__inner">
+              <div className="finder__icon" ref={icon}></div>
               <input
-                class="finder__input"
+                className="finder__input"
                 type="text"
                 name="q"
                 placeholder="Search..."

@@ -38,7 +38,7 @@ export default function PurchaseOrders() {
   useEffect(() => {
     const getStats = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/order/stats");
+        const res = await axios.get("https://ztreamgames-backend-production.up.railway.app/order/stats");
         res.data.map((item) => {
           setOrderStats((prev) => [
             ...prev,

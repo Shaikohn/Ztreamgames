@@ -29,7 +29,6 @@ const CartContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("CARTITEMS", cartItems);
     dispatch(calculateTotal());
   }, [dispatch, cartItems]);
 
@@ -158,7 +157,7 @@ const CartContainer = () => {
             <button className="clearButton" onClick={openedModal}>
               <Trash />
             </button>
-            <form action="http://localhost:3001/payment/payment" method="POST">
+            <form action="https://ztreamgames-backend-production.up.railway.app/payment/payment" method="POST">
               <input type="hidden" name="user_id" value={id} />
               <input
                 type="hidden"

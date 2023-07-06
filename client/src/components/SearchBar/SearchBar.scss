@@ -1,13 +1,11 @@
 .contenedor {
     display:flex;
     align-items:center;
-    
     background-color: #000;
     @media screen and (max-width: 768px) {
         display:none;
 }
     box-sizing: border-box;
-    
 }
 
 .buscar {
@@ -52,9 +50,6 @@ input[type="checkbox"]{
     padding-left: 20px;
     color: gray;
     box-shadow: -10px -10px 15px #19191a, 10px 10px 15px #262729;
-
-
-
 }
 
 

@@ -60,7 +60,7 @@ const CartContainer = () => {
                     width="20"
                     height="20"
                     fill="currentColor"
-                    class="bi bi-arrow-left"
+                    className="bi bi-arrow-left"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -76,19 +76,19 @@ const CartContainer = () => {
             <div>
               <div className={styles.titles}></div>
               <div className={styles.cartItems}>
-                {cartItems?.map((cartItem) => (
-                  <div className={styles.cartItem} key={cartItem.id}>
-                    <div class="background-img">
+                {cartItems?.map((cartItem, i) => (
+                  <div className={styles.cartItem} key={i}>
+                    <div className="background-img">
                       <img alt="background"
                         src={cartItem.background_image}
                         className="imagengames"
                       />
-                      <div class="box">
+                      <div className="box">
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
-                        <div class="content">
+                        <div className="content">
                           <h3>{cartItem.name}</h3>
                           <p>
                             <a>Rating: {cartItem.rating}</a>
@@ -100,6 +100,7 @@ const CartContainer = () => {
                           <button
                             type="button"
                             onClick={() => dispatch(removeItem(cartItem._id))}
+                            style={{background: 'none', color: 'white', cursor: 'pointer', padding: '10px'}}
                           >
                             Remove
                           </button>
@@ -111,12 +112,10 @@ const CartContainer = () => {
               </div>
 
               <div className={styles.cartSummary}>
-                <button className="clearButton" onClick={openedModal}>
-                  <button className={styles.clearCart}>Clear cart</button>
-                </button>
+                  <button onClick={openedModal} className={styles.clearCart}>Clear cart</button>
                 <div className={styles.cartCheckout}>
                   <div className={styles.subtotal}>
-                    <span>Subtotal: {total}$</span>
+                    <span>Subtotal: {total}</span>
 
                     <span className={styles.amount}>$</span>
                   </div>

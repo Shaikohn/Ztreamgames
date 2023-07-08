@@ -9,12 +9,21 @@ async function googleVerify(token = "") {
   });
   const { name, picture, email, given_name, family_name } = ticket.getPayload();
 
-  return {
-    name,
-    image: picture,
-    username: given_name + family_name,
-    email,
-  };
+  if(family_name === undefined) {
+    return {
+      name,
+      image: picture,
+      username: given_name,
+      email,
+    };
+  } else {
+    return {
+      name,
+      image: picture,
+      username: given_name + family_name,
+      email,
+    };
+  }
 }
 
 module.exports = {

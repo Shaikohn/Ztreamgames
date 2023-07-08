@@ -7,7 +7,7 @@ import { useModal } from "../Modals/useModal";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import userBlocked from "../../images/userBlocked.png";
-import { GoogleLogin } from "react-google-login";
+import { GoogleLogin } from '@react-oauth/google';
 import { gapi } from "gapi-script";
 import { GoogleLogIn } from "../../redux/actions/LogInActions";
 
@@ -33,7 +33,8 @@ function NavBarLogIn() {
   }, []);
 
   const googleSuccess = async (res) => {
-    dispatch(GoogleLogIn(res));
+    const googleToken = res.credential
+    dispatch(GoogleLogIn(googleToken));
   };
 
   const dispatch = useDispatch();
@@ -85,13 +86,13 @@ function NavBarLogIn() {
             </button>
           </form>
           <div id="googleLogIn_navbar">
-            <GoogleLogin
-              clientId="189786706143-f1m6squ261r1itibbv9fdtupfmb3v9cn.apps.googleusercontent.com"
-              buttonText="Sign In"
-              onSuccess={googleSuccess}
-              onFailure={() => {}}
-              cookiePolicy={"single_host_origin"}
-            />
+          <GoogleLogin
+            client_id="95092504145-q0djc8dh6lt71ornud3c2dtdn2nd1a43.apps.googleusercontent.com"
+            onSuccess={googleSuccess}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          />
           </div>
           {loginData.error ? (
             // <p>{loginData.error}</p>

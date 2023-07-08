@@ -2,7 +2,7 @@ import NavBar from "../../components/NavBar";
 import Login from "../../components/Login/Login";
 import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
-import { GoogleLogin } from "react-google-login";
+import { GoogleLogin } from '@react-oauth/google';
 import { gapi } from "gapi-script";
 import { useDispatch } from "react-redux";
 import { GoogleLogIn } from "../../redux/actions/LogInActions";
@@ -22,7 +22,8 @@ export default function SignIn() {
   }, []);
 
   const googleSuccess = async (res) => {
-    dispatch(GoogleLogIn(res));
+    const googleToken = res.credential
+    dispatch(GoogleLogIn(googleToken));
   };
 
   return (
@@ -34,12 +35,12 @@ export default function SignIn() {
         <h1>Google Sign In</h1>
         <hr />
         <GoogleLogin
-          clientId="189786706143-f1m6squ261r1itibbv9fdtupfmb3v9cn.apps.googleusercontent.com"
-          buttonText="Sign In"
-          onSuccess={googleSuccess}
-          onFailure={() => {}}
-          cookiePolicy={"single_host_origin"}
-        />
+            client_id="95092504145-q0djc8dh6lt71ornud3c2dtdn2nd1a43.apps.googleusercontent.com"
+            onSuccess={googleSuccess}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          />
         <p>
           Or
           <Link to="/register" className={"linkStyle"}>

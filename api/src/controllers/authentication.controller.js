@@ -43,22 +43,18 @@ const googleSignIn = async (req, res = response) => {
   try {
     const { email, name, image, username } = await googleVerify(id_token);
 
-    let usuario = await User.findOne({ email });
-
+    let usuario = await User.findOne({email});
+    console.log(usuario)
     if (!usuario) {
       //tengo que crearlo
       const data = {
         username,
         name,
         email,
-        hashPassword: ":P",
-        image,
-        google: true,
-        backgroundImage,
       };
 
       usuario = new User(data);
-      await usuario.save();
+      await usuario.save(); 
     }
     // Generar el JWT
     const userForToken = {
@@ -83,10 +79,27 @@ const googleSignIn = async (req, res = response) => {
     });
   } catch (error) {
     res.status(400).json({
-      msg: "El token no se pudo verificar",
+      msg: error,
     });
   }
 };
+
+/* const googleSignIn = async(req, res) => {
+  try {
+      const { email, given_name, family_name, picture } = req.body
+      const existingUser = await User.findOne({email})
+      if(existingUser) {
+        const token = jwt.sign({email: existingUser.email, id: existingUser._id}, 'test', {expiresIn: '1h'})
+        res.status(200).json({result: existingUser, token})
+      } else {
+          const result = await User.create({email, name: `${given_name} ${family_name}`, image: picture})
+          const token = jwt.sign({email: result.email, id: result._id}, 'test', {expiresIn: '1h'})
+          res.status(200).json({result, token})
+      }
+  } catch(e) {
+      console.log(e)
+  }
+} */
 
 const forgotPassword = async(req, res) => {
   const { email } = req.body 

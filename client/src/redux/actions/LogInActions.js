@@ -28,14 +28,14 @@ export const LogInActionApi =
       });
   };
 
-export const GoogleLogIn = (res) => async (dispatch) => {
+export const GoogleLogIn = (googleToken) => async (dispatch) => {
   axios({
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     url: `${baseURL}/auth/google`,
-    data: { id_token: res.tokenId },
+    data: { id_token: googleToken },
   }).then((response) => {
     const logindata = {
       userData: response.data.userForToken,

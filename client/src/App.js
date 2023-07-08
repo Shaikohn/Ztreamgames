@@ -25,6 +25,7 @@ import Users from "./components/AdminPanel/User";
 import ForgotPassword from "./components/ForgotPassword/forgot";
 import Reset from "./components/ForgotPassword/reset";
 import WishList from "./pages/WishList/WishList";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 function App() {
   const user = useSelector((state) => state.logIn.logIn);
@@ -52,7 +53,7 @@ function App() {
   }, [wishedItems, wishedAmount]);
 
   return (
-    <div>
+    <GoogleOAuthProvider clientId="95092504145-q0djc8dh6lt71ornud3c2dtdn2nd1a43.apps.googleusercontent.com">
       <Switch>
         <Route exact path={"/"} component={Home} />
         <Route exact path={"/home"} component={Home} />
@@ -101,7 +102,7 @@ function App() {
 
         <Route component={Error404} />
       </Switch>
-    </div>
+    </GoogleOAuthProvider>
   );
 }
 

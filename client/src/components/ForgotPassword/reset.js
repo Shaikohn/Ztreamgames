@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import Modals from "../Modals";
 import { useModal } from "../Modals/useModal";
 import './reset.css'
+import NavBar from "../NavBar";
 
 const Reset = (props) => {
 
@@ -15,6 +16,7 @@ const Reset = (props) => {
 
     return (
         <div>
+            <NavBar />
             <div>
                 <section>
                     <Formik
@@ -57,7 +59,48 @@ const Reset = (props) => {
                         }}
                     >
                         {({ errors }) => (
-                            <Modals isOpenModal={isOpenModal} closeModal={closeModal}>
+                            <Form>
+                            <div className="reset_wrapper">
+                            <div className="form_container">
+                              <div className="title_container">
+                                <h3 className="modal-reset-title">Check your email!</h3>
+                                <p className="modal-reset-text">You have 20 minutes to enter the token sent by mail, and change your new password </p>
+                              </div>
+                              <div>
+                                <label htmlFor="resetToken" className="modal-reset-label">Token </label>
+                                    <Field
+                                        type='text'
+                                        id="token"
+                                        placeholder="Token"
+                                        name="resetToken"
+                                        className="form-control"
+                                    />
+                                    <ErrorMessage name="resetToken" component={() => (
+                                    <div className="modal-reset-errors">{errors.resetToken}</div>)}/>
+                                </div>
+                                <div>
+                                        <label htmlFor="newP" className="modal-reset-label">New password </label>
+                                        <Field
+                                            type='password'
+                                            id="password"
+                                            placeholder="********"
+                                            name="newP"
+                                            className="form-control"
+                                        />
+                                        <ErrorMessage name="newP" component={() => (
+                                            <div className="modal-reset-errors">{errors.newP}</div>
+                                        )} />
+                                    </div>
+                            <div>
+                                    <button type="submit" className="buttonregister">Submit</button>
+                                    {send && <p>User added succesfully</p>}
+                            </div>
+                            </div>
+                          </div>
+                          </Form>
+                        )}
+                    </Formik>
+                    {/* <Modals isOpenModal={isOpenModal} closeModal={closeModal}>
                             <Form>
                                 <h3 className="modal-reset-title">Check your email!</h3>
 
@@ -91,9 +134,7 @@ const Reset = (props) => {
                                     {send && <p>User added succecsfully</p>}
                                 </div>
                             </Form>
-                            </Modals>
-                        )}
-                    </Formik>
+                            </Modals> */}
                 </section>
             </div>
         </div>

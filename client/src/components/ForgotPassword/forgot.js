@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import Modals from "../Modals";
 import { useModal } from "../Modals/useModal";
 import './forgot.css'
+import NavBar from "../NavBar";
 
 const ForgotPassword = () => {
 
@@ -15,6 +16,8 @@ const history = useHistory()
 
 
 return (
+    <div>
+        <NavBar />
     <div className="container-forgot">
         <div >
             <section>
@@ -35,7 +38,6 @@ return (
                         return errors;
                     }}
                     onSubmit={(values, { resetForm }) => {
-                        console.log(values)
 
                         resetForm();
                         axios.put('https://ztreamgames-backend-production.up.railway.app/auth/forgot-password', values)
@@ -50,39 +52,38 @@ return (
                             }
                         })
                         resetForm();
-                        console.log(values)
                     }}
                 >
 
                     {({ errors }) => (
-                        <Modals isOpenModal={isOpenModal} closeModal={closeModal}>
                         <Form>
+                        <div className="logIn_wrapper">
+                        <div className="form_container">
+                          <div className="title_container">
                             <h3 className="modal-forgot-title">Password recovery</h3>
                             <h4 className="modal-forgot-text">Inform the email address used to create your account</h4>
-                           
-                            
-                                <label htmlFor="email" className="modal-forgot-label">Email address: </label>
-
-                                <Field
-                                    type='text'
-                                    id="email"
-                                    placeholder="user@user.com"
-                                    name="email"
-                                />
-                                <ErrorMessage name="email" component={() => (
-                                    <div className="modal-forgot-errors">{errors.email}</div>
-                                )} />
-                            
-                            <div className="container-forgot-button">
-                                <button type="submit" className="modal-forgot-submit">Submit</button>
-                                {send && <p>User added succecsfully</p>}
-                            </div>
-                        </Form>
-                        </Modals>
+                          </div>
+                          <Field
+                            type='text'
+                            id="email"
+                            name="email"
+                            className="form-control"
+                        />
+                        <ErrorMessage name="email" component={() => (
+                        <div className="modal-forgot-errors">{errors.email}</div>
+                        )} />
+                        <div>
+                                <button type="submit" className="buttonregister">Submit</button>
+                                {send && <p>User added succesfully</p>}
+                        </div>
+                        </div>
+                      </div>
+                      </Form>
                     )}
                 </Formik>
             </section>
         </div>
+    </div>
     </div>
 );
  }

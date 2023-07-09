@@ -38,12 +38,14 @@ function Login() {
         type="text"
         id="username"
         onChange={(e) => handleUserName(e)}
+        className="input-control"
       ></input>
-      <label htmlFor="password">Password:</label>
+      <label htmlFor="password" style={{marginTop: '10px'}}>Password:</label>
       <input
         type="password"
         id="password"
         onChange={(e) => handlePassword(e)}
+        className="input-control"
       ></input>
       <button type="submit" className="btn btn-primary" style={{marginTop: '20px'}}>Log In</button>
       {loginData.error ? (

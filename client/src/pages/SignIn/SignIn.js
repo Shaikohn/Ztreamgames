@@ -84,7 +84,7 @@ export default function Register() {
   return (
     <div className="register-boty">
       <NavBar />
-      <div className="form_wrapper">
+      <div className="logIn_wrapper">
         <div className="form_container">
           <div className="title_container">
             <h2>Log In Form</h2>
@@ -92,7 +92,7 @@ export default function Register() {
           <Login />
         {/* <hr style={{marginTop: '30px'}} /> */}
         {/* <h1>Google Sign In</h1> */}
-        <div style={{marginBottom:'20px', marginTop: '20px'}}>
+        <div style={{marginBottom:'20px', marginTop: '20px', marginLeft: '10px'}}>
         <GoogleLogin
             client_id="95092504145-q0djc8dh6lt71ornud3c2dtdn2nd1a43.apps.googleusercontent.com"
             onSuccess={googleSuccess}

@@ -246,6 +246,7 @@ export default function Register() {
                 id="register_username"
                 type="text"
                 onChange={(e) => handleUserName(e)}
+                className="input-control"
               ></input>
             </div>
 
@@ -262,6 +263,7 @@ export default function Register() {
                 id="register_name"
                 type="text"
                 onChange={(e) => handleName(e)}
+                className="input-control"
               ></input>
             </div>
 
@@ -278,6 +280,7 @@ export default function Register() {
                 id="register_email"
                 type="email"
                 onChange={(e) => handleEmail(e)}
+                className="input-control"
               ></input>
             </div>
             {newUser.email.error ? (
@@ -293,6 +296,7 @@ export default function Register() {
                 id="register_password"
                 type="password"
                 onChange={(e) => handlePassword(e)}
+                className="input-control"
               ></input>
             </div>
             {newUser.password.error ? (
@@ -308,6 +312,7 @@ export default function Register() {
                 id="register_password_confirm"
                 type="password"
                 onChange={(e) => handleConfirmPassword(e)}
+                className="input-control"
               ></input>
             </div>
             {newUser.password.identical ? null : newUser.password.password

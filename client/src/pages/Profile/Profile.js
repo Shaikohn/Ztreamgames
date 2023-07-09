@@ -228,13 +228,13 @@ function UserDetailsOptions() {
                     {userDetails.name ? (
                       <h2 className="profile_real_name">{userDetails.name}</h2>
                     ) : null}
-                    {userDetails.nationality ? (
+                    {userDetails.nationality.length > 0 ? (
                       <img
                         src={userDetails.nationality[1]}
                         alt="nationality"
                         id="profile_show_image_nationality"
                       ></img>
-                    ) : null}
+                    ) : <p>Not provided!</p>}
                     {userDetails.age ? (
                       <h2>
                         Age:
@@ -331,6 +331,7 @@ function UserDetailsOptions() {
                       <img
                         alt="friend_profile"
                         className="friends_icon_profile"
+                        title={x[2]}
                         src={
                           x[1]
                             ? x[1]
@@ -362,7 +363,7 @@ function UserDetailsOptions() {
             className="overflow_profile_activity"
           >
             <div id="profile_activity_container">
-              {activity.map((x) => (
+              {activity.length > 1 ?  activity.map((x) => (
                 <div key={x.id} className="profile_activity_recent">
                   <p>
                     {x.createdAt.split("T")[0] +
@@ -381,10 +382,14 @@ function UserDetailsOptions() {
                     ))}
                   </div>
                 </div>
-              ))}
-              <div onClick={() => handleLoadMore()} id="load_more_profile">
-                Load More...
-              </div>
+              )): ""}
+              {
+                activity.length > 1 ? 
+                <div onClick={() => handleLoadMore()} id="load_more_profile">
+                  Load More...
+                </div> : "This user doesn't have any activity!"
+              }
+              
             </div>
           </Animated>
         </div>

@@ -33,7 +33,7 @@ function Login() {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)} className="form_login">
-      <label htmlFor="username">Username:</label>
+      <label htmlFor="username" style={{marginTop: '10px'}}>Username:</label>
       <input
         type="text"
         id="username"
@@ -45,7 +45,7 @@ function Login() {
         id="password"
         onChange={(e) => handlePassword(e)}
       ></input>
-      <button type="submit">Log In</button>
+      <button type="submit" className="btn btn-primary" style={{marginTop: '20px'}}>Log In</button>
       {loginData.error ? (
         // <p>{loginData.error}</p>
         loginData.error === "User is blocked" ? (

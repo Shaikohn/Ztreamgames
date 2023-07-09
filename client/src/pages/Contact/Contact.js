@@ -155,7 +155,7 @@ function Contact() {
   return (
     <div>
       <NavBar />
-      <div className="container">
+      <div>
         <div className="row">
           <h1 className="contact_h1">Contact Us</h1>
         </div>
@@ -172,8 +172,8 @@ function Contact() {
                   required
                   className="input_contact"
                   onChange={(e) => handleName(e)}
+                  placeholder="Name"
                 />
-                <label className="label_contact">Name</label>
               </div>
             </div>
             <div className="col-md-6 col-sm-12">
@@ -183,8 +183,8 @@ function Contact() {
                   className="input_contact"
                   onChange={(e) => handleContact(e)}
                   id="email"
+                  placeholder="Email"
                 />
-                <label>Email</label>
               </div>
             </div>
             <div className="col-md-6 col-sm-12">
@@ -194,8 +194,9 @@ function Contact() {
                   className="input_contact"
                   onChange={(e) => handleContact(e)}
                   id="phone"
+                  style={{marginLeft: '60px'}}
+                  placeholder="Phone Number"
                 />
-                <label>Phone Number</label>
               </div>
             </div>
             <div className="col-xs-12">
@@ -205,8 +206,8 @@ function Contact() {
                   required
                   className="textarea_contact"
                   onChange={(e) => handleMessage(e)}
+                  placeholder="Message"
                 ></textarea>
-                <label>Message</label>
               </div>
             </div>
             <div className="col-xs-12">{submitButton(contact)}</div>

@@ -50,8 +50,8 @@ export const handleImage = async (e, setImage) => {
   const formData = new FormData();
 
   formData.append("file", e.target.files[0]);
-  formData.append("upload_preset", "gu6gzzkc");
-  await fetch("https://api.cloudinary.com/v1_1/dhyz4afz7/image/upload", {
+  formData.append("upload_preset", "ur82rmeu");
+  await fetch("https://api.cloudinary.com/v1_1/dl1itu05s/image/upload", {
     method: "POST",
     body: formData,
   })

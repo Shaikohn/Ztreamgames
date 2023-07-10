@@ -305,7 +305,8 @@ align-items: center;
   transition: width 0.2s ease-in-out;
   font-weight: 500;
   font-family: inherit;
-  
+  margin-left: 50px;
+  margin-top: 10px;
 }
 
 .add-btnprofile_red:hover {

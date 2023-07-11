@@ -111,12 +111,12 @@ export default function Users() {
               <Link to={`/users/${x.id}`}>
                 <button className="nombre-usuarios">
                 {/* <p className={x.admin ? "user_admin" : "user_comun"}> */}
-                  {x.username}
+                  {x.admin === true ? <p style={{color: 'yellow'}}>{x.username}</p> : <p>{x.username}</p>}
                 </button>
               </Link>
-              <div className="es-admin">
+              {/* <div className="es-admin">
               {x.admin ? "User admin" : null}
-              </div>
+              </div> */}
             </div>
           ))}
         </DivContUser>
@@ -134,8 +134,8 @@ border-radius: 2rem
 const DivContUser = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #202020;
-  width: 80%;
+/*   background-color: #202020;
+  width: 80%; */
   height: fit-content;
   min-height: 80%;
   margin: 20px;

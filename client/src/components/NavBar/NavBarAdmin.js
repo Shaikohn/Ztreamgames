@@ -14,7 +14,6 @@ import {AiTwotoneHome} from 'react-icons/ai'
 export default function NavBarAdmin(){
 
     const user = useSelector((state) => state.logIn.logIn);
-
     
     return (
         <>

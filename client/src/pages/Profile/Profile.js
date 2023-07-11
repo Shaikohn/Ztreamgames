@@ -211,7 +211,7 @@ function UserDetailsOptions() {
                 animationOut="fadeOut"
                 isVisible={estado}
               >
-                <h1 id="profile_show_username">{userDetails.username}</h1>
+                <h1 id="profile_show_username" className="stroke">{userDetails.username}</h1>
               </Animated>
             ) : null}
             <div id="profile_show_cards_datas">
@@ -317,7 +317,7 @@ function UserDetailsOptions() {
         <div id="lower_profile_section">
           {friend.friendList.length > 0 && userDetails.friends ? (
             <div>
-              <h2 className="profile_friends_title">Friends</h2>
+              <h2 className="profile_friends_title stroke">FRIENDS</h2>
 
               <Animated
                 animationIn="animate__slideInLeft"
@@ -387,7 +387,7 @@ function UserDetailsOptions() {
                 activity.length > 1 ? 
                 <div onClick={() => handleLoadMore()} id="load_more_profile">
                   Load More...
-                </div> : "This user doesn't have any activity!"
+                </div> : <p style={{marginLeft: '50px'}} className="stroke">This user doesn't have any activity!</p>
               }
               
             </div>

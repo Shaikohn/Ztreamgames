@@ -68,6 +68,7 @@ const googleSignIn = async (req, res = response) => {
       posts: usuario.posts,
       createdAt: usuario.createdAt,
       backgroundImage: usuario.backgroundImage,
+      image: usuario.image,
     };
 
     const token = jwt.sign(userForToken, process.env.JWT_secret_key);

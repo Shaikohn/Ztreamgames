@@ -67,10 +67,10 @@ export default function PurchaseOrders() {
         dataKey="Monthly orders income"
       />
         <DivMainOrder>
-          {order &&
+          {order.length > 0 ? order &&
             order.map((order) => {
               return <CardOrder key={order.id} {...order} />;
-            })}
+            }) : <p style={{textAlign: 'center'}}>There isn´t any order yet!</p>}
         </DivMainOrder>
         </Content>
       </Container>

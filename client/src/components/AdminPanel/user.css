@@ -1,6 +1,7 @@
 .admin-user{
-    display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
+    display: flex; 
+    margin: 3px;
+    /* grid-template-columns: 3fr 1fr 1fr; */
 }
 
 .admin-user:hover {

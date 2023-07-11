@@ -31,8 +31,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     max-width: 320px;
-   
-    
 }
 .input{
     background-color: rgba(255,255,255,0.1);
@@ -42,7 +40,6 @@
     color : #FAFBFC;
     width: 300px;
     align-self: center;
-    
 }
 #image{
     margin: 30px;

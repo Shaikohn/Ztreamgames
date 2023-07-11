@@ -72,7 +72,7 @@ export default function NavBarAdmin(){
 
 const Container = styled.nav`
   width: 5rem;
-  height:100vh;
+  height:150vh;
   background-color: #23232e;
   position:fixed; 
   transition: width 200ms ease;

@@ -8,6 +8,8 @@ import {
 } from "../../redux/actions/usersActions";
 import NavBar from "../../components/NavBar/index";
 import "./UserDetailsOptions.css"
+import NavBarAdmin from "../../components/NavBar/NavBarAdmin";
+import { Navbar } from "react-bootstrap";
 
 function UserDetailsOptions() {
   const dispatch = useDispatch();
@@ -32,7 +34,8 @@ function UserDetailsOptions() {
 
   return (
     <div>
-      <NavBar></NavBar>
+      <NavBar />
+      <NavBarAdmin />
     <div className="user-details-cont">
       <h1 className="user-details-title">{userDetails.username}</h1>
       <div className="user-details-info">

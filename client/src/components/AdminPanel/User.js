@@ -78,7 +78,7 @@ export default function Users() {
             value="admin/user"
             className="btn11-cont"
           >
-            User/Admin
+            User/<span style={{color: 'yellow'}}>Admin</span>
           </button>
           </div>
           <div>
@@ -88,7 +88,7 @@ export default function Users() {
             value="blocked"
             className="btn12-cont"
           >
-            Blocked/Unblocked
+            <span style={{color: 'red'}}>Blocked</span>/Unblocked
           </button>
           </div>
           <div>
@@ -111,7 +111,7 @@ export default function Users() {
               <Link to={`/users/${x.id}`}>
                 <button className="nombre-usuarios">
                 {/* <p className={x.admin ? "user_admin" : "user_comun"}> */}
-                  {x.admin === true ? <p style={{color: 'yellow'}}>{x.username}</p> : <p>{x.username}</p>}
+                  {x.admin === true ? <p style={{color: 'yellow'}}>{x.username}</p> : x.deleted === true ? <p style={{color: 'red'}}>{x.username}</p> : <p>{x.username}</p>}
                 </button>
               </Link>
               {/* <div className="es-admin">

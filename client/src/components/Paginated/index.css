@@ -43,6 +43,7 @@
   vertical-align: middle;
   white-space: nowrap;
   word-wrap: break-word;
+  margin: 2px;
 }
 
 .currentPage{

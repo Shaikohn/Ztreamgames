@@ -20,9 +20,9 @@ export default function WishList() {
             return wishedItems;
         } 
         const filtered = wishedItems.filter(d => d.name.toLowerCase().includes(search.toLowerCase()))
-        if(filtered.length === 0) {
+        /* if(filtered.length === 0) {
             console.log("Sorry, we couldn't find that game")
-        } 
+        }  */
         return filtered
     }
 
@@ -33,7 +33,7 @@ export default function WishList() {
     function NotFound() {
         if(filteredGames().length === 0) {
             return (
-                <h1>
+                <h1 style={{marginTop: '5px',textAlign: 'center'}}>
                     There is no match in your wishlist
                 </h1>
             )

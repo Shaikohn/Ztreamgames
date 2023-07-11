@@ -1,5 +1,6 @@
 .wishedImage {
     border-radius: 10px;
+    border: solid 2px black;
     float: left;
     height: 210px;
     margin-left: 25px;
@@ -8,7 +9,8 @@
 }
 
 .wishedItemContainer {
-    background-color: rgb(66, 75, 75);
+    background-color: rgb(216, 203, 215);
+    border: solid 2px black;
     border-radius: 20px;
     text-align: center;
     margin-bottom: 10px;
@@ -36,6 +38,7 @@
 } 
 
 .wishPrice {
+    color: green;
     font-size: 20px;
 }
 

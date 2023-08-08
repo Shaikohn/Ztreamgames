@@ -29,9 +29,7 @@ const deleteOrder = async (req, res, next) => {
 const allOrders = async (req, res, next) => {
   try {
     const Orders = await Order.find({});
-    Orders.length
-      ? res.status(200).json(Orders)
-      : res.status(404).json({ msg: "There are not documents on Order Model" });
+    res.status(200).json(Orders)
   } catch (err) {
     next(err);
   }

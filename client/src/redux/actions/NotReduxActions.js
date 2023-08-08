@@ -1,6 +1,6 @@
 //Las pongo aca asi los localhost que hay que cambiarlos para el deploy quedan en 1 solo archivo
 
-const baseURL = 'https://ztreamgames-backend-production.up.railway.app'
+const baseURL = 'https://ztreamgames-qjsa-dev.fl0.io'
 
 export const sendContactEmail = async (data) => {
   return fetch(`${baseURL}/email/sendContact`, {

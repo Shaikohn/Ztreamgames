@@ -26,12 +26,12 @@ export default function DogDetails() {
       {
         <div>
           <NavBar />
-          <div className="floatContainer">
+          {/* <div className="floatContainer">
                 <Link className="cartLink" to="/cart" >
                     {amount}
                     <div className="float"><CartIcon /></div>
                 </Link>
-            </div>
+            </div> */}
           {Object.keys(details).length > 0 ? (
             <Details details={details} />
           ) : (

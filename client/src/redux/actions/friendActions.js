@@ -7,7 +7,7 @@ import {
   searchedUsersInDB,
 } from "../slices/friendSlice";
 
-const baseURL = 'https://ztreamgames-backend-production.up.railway.app'
+const baseURL = 'https://ztreamgames-qjsa-dev.fl0.io'
 
 export const cleanUpActionFriendSlice = () => (dispatch) => {
   return dispatch(cleanUpFriendSlice());

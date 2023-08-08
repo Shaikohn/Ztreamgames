@@ -40,7 +40,7 @@ return (
                     onSubmit={(values, { resetForm }) => {
 
                         resetForm();
-                        axios.put('https://ztreamgames-backend-production.up.railway.app/auth/forgot-password', values)
+                        axios.put('https://ztreamgames-qjsa-dev.fl0.io/auth/forgot-password', values)
                         swal({
                             title: '',
                             text: 'Please check your inbox ',

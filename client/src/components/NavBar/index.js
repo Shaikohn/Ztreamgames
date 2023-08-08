@@ -119,22 +119,6 @@ export default function NavBar({ usuario }) {
 
           <Logo />
 
-          {/* <NavLink1 to="/">
-          <h1>ZTEAM</h1>
-        </NavLink1> */}
-          {/* <Bars /> */}
-
-          {/* <NavLinkHome to="/home">Home</NavLinkHome>
-          <NavLink1 to="/videogame/wishList">WishList</NavLink1>
-          <div className="cartIcon">
-            <NavLink1 to="/cart" >
-              <CartIcon />
-              {amount}
-            </NavLink1>
-          </div> */}
-          
-          
-
           <NavBtn>
             {user.status ? (
               <div className="menu_user_loged_navbar">

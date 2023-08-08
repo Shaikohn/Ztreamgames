@@ -42,7 +42,7 @@ const Reset = (props) => {
                              console.log(values.newP)
 
                             resetForm();
-                            axios.put('https://ztreamgames-backend-production.up.railway.app/auth/reset-password', values)
+                            axios.put('https://ztreamgames-qjsa-dev.fl0.io/auth/reset-password', values)
                             swal({
                                 title: 'Congratulation',
                                 text: 'Password changed successfully',

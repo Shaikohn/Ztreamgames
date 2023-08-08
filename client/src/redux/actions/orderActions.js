@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {getAllOrders, getOrderId} from '../slices/orderSlice'
 
-const baseURL = 'https://ztreamgames-backend-production.up.railway.app'
+const baseURL = 'https://ztreamgames-qjsa-dev.fl0.io'
 
 export const getOrders = ()=> (dispatch) => {
     axios(`${baseURL}/order/order`)

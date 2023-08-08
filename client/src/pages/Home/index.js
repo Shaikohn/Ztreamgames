@@ -68,7 +68,7 @@ export default function Home() {
                 <Slideshow controles={true} autoplay={true} velocidad="5000" intervalo="3000">
 				<Slide>
 					
-						<img src={zelda} alt=""/>
+						<img className="slideImages" src={zelda} alt=""/>
 					
 					<TextoSlide colorFondo="navy">
 						<p>15% descuento</p>
@@ -76,7 +76,7 @@ export default function Home() {
 				</Slide>
 				<Slide>
 					
-						<img src={horizon} alt=""/>
+						<img className="slideImages"  src={horizon} alt=""/>
 					
 					<TextoSlide>
 						<p>15% descuento</p>
@@ -84,7 +84,7 @@ export default function Home() {
 				</Slide>
                 <Slide>
 					
-						<img src={tsushima} alt=""/>
+						<img className="slideImages"  src={tsushima} alt=""/>
 					
 					<TextoSlide>
 						<p>15% descuento</p>
@@ -92,7 +92,7 @@ export default function Home() {
 				</Slide>
                 <Slide>
 					
-						<img src={stray} alt=""/>
+						<img className="slideImages"  src={stray} alt=""/>
 					
 					<TextoSlide>
 						<p>15% descuento</p>

@@ -51,7 +51,7 @@ export default function Users() {
   useEffect(() => {
     const getStats = async () => {
       try {
-        const res = await axios.get("https://ztreamgames-backend-production.up.railway.app/users/stats");
+        const res = await axios.get("https://ztreamgames-qjsa-dev.fl0.io/users/stats");
         res.data.map((item) => {
           setUserStats((prev) => [
             ...prev,

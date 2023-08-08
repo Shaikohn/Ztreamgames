@@ -1,6 +1,6 @@
 import { getAllUsers, userDetails } from "../slices/usersSlice";
 
-const baseURL = 'https://ztreamgames-backend-production.up.railway.app'
+const baseURL = 'https://ztreamgames-qjsa-dev.fl0.io'
 
 export const getUsers = () => (dispatch) => {
   fetch(`${baseURL}/users/users`, {

@@ -29,7 +29,7 @@ export const Nav1=styled.nav`
 background: #131419;
 height:90px;
 display:flex;
-justify-content:left;
+justify-content:space-between;
 padding:40px;
 z-index:10;
 `

@@ -1,7 +1,7 @@
 import { logIn } from "../../redux/slices/logInSlice";
 import axios from "axios";
 
-const baseURL = 'https://ztreamgames-backend-dev-bfgm.1.us-1.fl0.io'
+const baseURL = 'https://ztreamgames-backend.onrender.com'
 
 export const LogInActionApi =
   (data, setloginData, loginData) => async (dispatch) => {

@@ -348,7 +348,7 @@ export default function Edit() {
       price: parseInt(price.value),
     };
 
-    return fetch(`https://ztreamgames-qjsa-dev.fl0.io/games/${id}`, {
+    return fetch(`https://ztreamgames-backend.onrender.com/games/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(arg),

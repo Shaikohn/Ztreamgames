@@ -190,7 +190,7 @@ export default function Register() {
       image: image.value,
     };
 
-    await fetch(`https://ztreamgames-qjsa-dev.fl0.io/users/users`, {
+    await fetch(`https://ztreamgames-backend.onrender.com/users/users`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(arg),

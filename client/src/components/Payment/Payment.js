@@ -17,7 +17,7 @@ export default function Payment(){
        
         useEffect(
           ()=>{
-            axios(`https://ztreamgames-qjsa-dev.fl0.io/order/order/${order_id}`)
+            axios(`https://ztreamgames-backend.onrender.com/order/order/${order_id}`)
             .then(({data})=>{
             setOrder(data)
          })

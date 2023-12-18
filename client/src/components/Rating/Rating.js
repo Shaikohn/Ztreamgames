@@ -49,7 +49,7 @@ export default function Rating() {
     async function handleLike(e) {
         e.preventDefault()
         try {
-            await axios.post(`https://ztreamgames-qjsa-dev.fl0.io/reviews/likes/${id}`)
+            await axios.post(`https://ztreamgames-backend.onrender.com/reviews/likes/${id}`)
             setLike(true)
             forceUpdate();
         }
@@ -61,7 +61,7 @@ export default function Rating() {
     async function handleDislike(e) {
         e.preventDefault()
         try {
-            await axios.post(`https://ztreamgames-qjsa-dev.fl0.io/reviews/dislikes/${id}`)
+            await axios.post(`https://ztreamgames-backend.onrender.com/reviews/dislikes/${id}`)
             setDislike(true)
             forceUpdate();
         }
@@ -74,7 +74,7 @@ export default function Rating() {
         e.preventDefault()
         if(!input.review.error) {
             try {
-                await axios.post(`https://ztreamgames-qjsa-dev.fl0.io/reviews/${id}`, {
+                await axios.post(`https://ztreamgames-backend.onrender.com/reviews/${id}`, {
           comments: input.review.value,
           author:
             JSON.parse(localStorage.getItem("user")).status === false

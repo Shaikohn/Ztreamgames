@@ -40,7 +40,7 @@ function AdminPanel() {
   } */
 
   async function handleDelete(e) {
-    await fetch(`https://ztreamgames-qjsa-dev.fl0.io/games/${e.target.value}`, {
+    await fetch(`https://ztreamgames-backend.onrender.com/games/${e.target.value}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

@@ -68,7 +68,7 @@ export default function Register() {
     function start() {
       gapi.client.init({
         clientId:
-          "189786706143-f1m6squ261r1itibbv9fdtupfmb3v9cn.apps.googleusercontent.com",
+          "95092504145-q0djc8dh6lt71ornud3c2dtdn2nd1a43.apps.googleusercontent.com",
         scope: "email",
       });
     }

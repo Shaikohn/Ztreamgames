@@ -64,7 +64,7 @@ import "./SignIn.css";
 
 export default function Register() {
   const dispatch = useDispatch();
-  useEffect(() => {
+  /* useEffect(() => {
     function start() {
       gapi.client.init({
         clientId:
@@ -74,7 +74,7 @@ export default function Register() {
     }
 
     gapi.load("client:auth2", start);
-  }, []);
+  }, []); */
 
   const googleSuccess = async (res) => {
     const googleToken = res.credential

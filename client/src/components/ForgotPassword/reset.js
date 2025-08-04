@@ -42,7 +42,7 @@ const Reset = (props) => {
                              console.log(values.newP)
 
                             resetForm();
-                            axios.put('https://ztreamgames-backend.onrender.com/auth/reset-password', values)
+                            axios.put('http://localhost:3001/auth/reset-password', values)
                             swal({
                                 title: 'Congratulation',
                                 text: 'Password changed successfully',

@@ -71,7 +71,7 @@ export default function Home() {
 						<img className="slideImages" src={zelda} alt=""/>
 					
 					<TextoSlide colorFondo="navy">
-						<p>15% descuento</p>
+						<p>15% discount</p>
 					</TextoSlide>
 				</Slide>
 				<Slide>
@@ -79,7 +79,7 @@ export default function Home() {
 						<img className="slideImages"  src={horizon} alt=""/>
 					
 					<TextoSlide>
-						<p>15% descuento</p>
+						<p>15% discount</p>
 					</TextoSlide>
 				</Slide>
                 <Slide>
@@ -87,7 +87,7 @@ export default function Home() {
 						<img className="slideImages"  src={tsushima} alt=""/>
 					
 					<TextoSlide>
-						<p>15% descuento</p>
+						<p>15% discount</p>
 					</TextoSlide>
 				</Slide>
                 <Slide>
@@ -95,7 +95,7 @@ export default function Home() {
 						<img className="slideImages"  src={stray} alt=""/>
 					
 					<TextoSlide>
-						<p>15% descuento</p>
+						<p>15% discount</p>
 					</TextoSlide>
 				</Slide>
 			</Slideshow>

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {getAllOrders, getOrderId} from '../slices/orderSlice'
 
-const baseURL = 'https://ztreamgames-backend.onrender.com'
+const baseURL = 'http://localhost:3001'
 
 export const getOrders = ()=> (dispatch) => {
     axios(`${baseURL}/order/order`)

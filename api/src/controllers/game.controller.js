@@ -87,7 +87,7 @@ const detailGame = async (req, res, next) => {
       rating: juego.rating,
       price: juego.price,
       genres: juego.genres,
-      description: data.description,
+      description: data.description.slice(3, -4),
       comments: juego.comments,
       // likeCount: juego.likeCount,
       // getPercentageOfLikes: juego.getPercentageOfLikes,

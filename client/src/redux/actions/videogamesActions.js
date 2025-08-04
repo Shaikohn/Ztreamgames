@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getAllVideogames, getVideogameById } from "../slices/videogamesSlice";
 
-const baseURL = 'https://ztreamgames-backend.onrender.com'
+const baseURL = 'http://localhost:3001'
 
 export const getVideogames = () => (dispatch) => {
   axios(`${baseURL}/games`)

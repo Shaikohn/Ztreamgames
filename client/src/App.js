@@ -26,10 +26,13 @@ import ForgotPassword from "./components/ForgotPassword/forgot";
 import Reset from "./components/ForgotPassword/reset";
 import WishList from "./pages/WishList/WishList";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import { removeItem } from "./redux/slices/cartSlice";
 
 function App() {
   const user = useSelector((state) => state.logIn.logIn);
   const dispatch = useDispatch();
+  const { cartItems, amount } = useSelector((state) => state.cart);
+  const { wishedItems, wishedAmount } = useSelector((state) => state.wishList);
 
   useEffect(() => {
     dispatch(localStorageUser(JSON.parse(window.localStorage.getItem("user"))));
@@ -37,10 +40,14 @@ function App() {
 
   useEffect(() => {
     window.localStorage.setItem("user", JSON.stringify(user));
+    for(let i = 0; i < cartItems.length; i++) {{
+        if(user.purchasedGames?.includes(cartItems[i]._id)) {
+          dispatch(removeItem(cartItems[i]._id))
+          localStorage.setItem("cart", JSON.stringify(cartItems));
+        }
+    }}
   }, [user]);
 
-  const { cartItems, amount } = useSelector((state) => state.cart);
-  const { wishedItems, wishedAmount } = useSelector((state) => state.wishList);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));

@@ -19,7 +19,7 @@ const login = async (req, res) => {
     return res.status(401).json({ error: "Invalid user or password" });
   }
 
-  const userForToken = {
+  /* const userForToken = {
     id: user[0]._id,
     username: user[0].username,
     admin: user[0].admin,
@@ -27,6 +27,25 @@ const login = async (req, res) => {
     name: user[0].name,
     image: user[0].image,
     backgroundImage: user[0].backgroundImage,
+  }; */
+
+  const userForToken = {
+      id: user[0]._id,
+      username: user[0].username,
+      email: user[0].email,
+      admin: user[0].admin,
+      friends: user[0].friends,
+      age: user[0].age,
+      nationality: user[0].nationality,
+      posts: user[0].posts,
+      createdAt: user[0].createdAt,
+      backgroundImage: user[0].backgroundImage,
+      image: user[0].image,
+      wish_list: user[0].wish_list,
+      friendRequests: user[0].friendRequests,
+      reviews: user[0].reviews,
+      profileVisibility: user[0].profileVisibility,
+      purchasedGames: user[0].purchasedGames,
   };
 
   const token = jwt.sign(userForToken, process.env.JWT_secret_key);
@@ -44,7 +63,6 @@ const googleSignIn = async (req, res = response) => {
     const { email, name, image, username } = await googleVerify(id_token);
 
     let usuario = await User.findOne({email});
-    console.log(usuario)
     if (!usuario) {
       //tengo que crearlo
       const data = {
@@ -69,6 +87,11 @@ const googleSignIn = async (req, res = response) => {
       createdAt: usuario.createdAt,
       backgroundImage: usuario.backgroundImage,
       image: usuario.image,
+      wish_list: usuario.wish_list,
+      friendRequests: usuario.friendRequests,
+      reviews: usuario.reviews,
+      profileVisibility: usuario.profileVisibility,
+      purchasedGames: usuario.purchasedGames,
     };
 
     const token = jwt.sign(userForToken, process.env.JWT_secret_key);

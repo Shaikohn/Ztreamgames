@@ -344,11 +344,11 @@ export default function Edit() {
       background_image: image.value,
       platforms: plataforms.value,
       genres: genres.value,
-      rating: parseInt(rating.value),
-      price: parseInt(price.value),
+      rating: rating.value,
+      price: price.value,
     };
 
-    return fetch(`https://ztreamgames-backend.onrender.com/games/${id}`, {
+    return fetch(`http://localhost:3001/games/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(arg),

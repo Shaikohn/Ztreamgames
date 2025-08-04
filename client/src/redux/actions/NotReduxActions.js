@@ -1,6 +1,6 @@
 //Las pongo aca asi los localhost que hay que cambiarlos para el deploy quedan en 1 solo archivo
 
-const baseURL = 'https://ztreamgames-backend-dev-bfgm.1.us-1.fl0.io'
+const baseURL = 'http://localhost:3001'
 
 export const sendContactEmail = async (data) => {
   return fetch(`${baseURL}/email/sendContact`, {

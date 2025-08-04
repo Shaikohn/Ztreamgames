@@ -156,7 +156,7 @@ const CartContainer = () => {
             <button className="clearButton" onClick={openedModal}>
               <Trash />
             </button>
-            <form action="https://ztreamgames-backend.onrender.com/payment/payment" method="POST">
+            <form action="http://localhost:3001/payment/payment" method="POST">
               <input type="hidden" name="user_id" value={id} />
               <input
                 type="hidden"

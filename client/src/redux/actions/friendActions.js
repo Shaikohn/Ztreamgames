@@ -7,7 +7,7 @@ import {
   searchedUsersInDB,
 } from "../slices/friendSlice";
 
-const baseURL = 'https://ztreamgames-backend.onrender.com'
+const baseURL = 'http://localhost:3001'
 
 export const cleanUpActionFriendSlice = () => (dispatch) => {
   return dispatch(cleanUpFriendSlice());

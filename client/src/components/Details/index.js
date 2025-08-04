@@ -32,7 +32,7 @@ export default function Details({ details }) {
 
     async function handleClick(reviewId) {
         try {
-          await axios.delete(`https://ztreamgames-backend.onrender.com/reviews/${reviewId}`);
+          await axios.delete(`http://localhost:3001/reviews/${reviewId}`);
           forceUpdate();
         } catch (error) {
           console.log(error);

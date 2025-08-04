@@ -7,7 +7,7 @@ import {
   dispatchActivity,
 } from "../slices/profileSlice";
 
-const baseURL = 'https://ztreamgames-backend.onrender.com'
+const baseURL = 'http://localhost:3001'
 
 export const cleanUpActionProfileSlice = () => (dispatch) => {
   return dispatch(cleanUpProfileSlice());

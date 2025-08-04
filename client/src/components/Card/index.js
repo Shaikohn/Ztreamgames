@@ -17,9 +17,11 @@ export default function Card({ name, image, platforms,  genres, released, _id, r
     const dispatch = useDispatch()
     const { cartItems } = useSelector((state) => state.cart);
     const {wishedItems} = useSelector((state) => state.wishList)
-    const {userDetails} = useSelector((state) => state.users)
+    const { userDetails } = useSelector((state) => state.users)
+    const user = useSelector((state) => state.logIn.logIn);
     let videogames = useSelector((state) => state.videogames.videogamesFiltrados);
     let game = videogames.find((i) => i._id === _id)
+/*     console.log(cartItems) */
 
     const inCart = cartItems.find((i) => i._id === _id);
     const inWished = wishedItems.find((i) => i._id === _id);
@@ -373,8 +375,8 @@ export default function Card({ name, image, platforms,  genres, released, _id, r
   </div>
 
   </Link>
-  {
-    userDetails.purchasedGames?.includes(game) ? <Added /> : wishedItems.includes(inWished) ? (
+  {/* {
+    user.purchasedGames?.includes(game._id) ? <button className="added"><Added  /></button>  : wishedItems.includes(inWished) ? (
         <button className="wishedContainer" disabled>
             {" "}
             <RedHeart />{" "}
@@ -387,16 +389,17 @@ export default function Card({ name, image, platforms,  genres, released, _id, r
             <Heart />
             </button>
         ) 
-  } 
+  }  */}
   {
-    userDetails.purchasedGames?.includes(game) ? <Added /> : cartItems.includes(inCart) ? (
-        <button className="inCart">
+    user.purchasedGames?.includes(game._id) ? <button className="added"><Added  /></button> : cartItems.includes(inCart) ? (
+        <button className="added" style={{cursor: 'pointer'}}>
             {" "}
             <CartIcon />{" "}
             </button>
         ) : (
             <button
-            className="addButton"
+            className="added" 
+            style={{cursor: 'pointer'}}
             onClick={() => dispatch(addItem(game))}
             >
             <AddIcon />

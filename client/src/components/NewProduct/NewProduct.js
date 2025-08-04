@@ -307,7 +307,7 @@ function NewProduct() {
     setSelectedPlatform([]);
     setCreado(true);
 
-    return fetch(`https://ztreamgames-backend.onrender.com/games`, {
+    return fetch(`http://localhost:3001/games`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(arg),

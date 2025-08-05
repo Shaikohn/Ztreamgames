@@ -14,6 +14,7 @@ Ztreamgames is a full-stack web application that simulates a modern video game d
 - 👥 Friends system
 - ⭐ Rating and comment system per game
 - 🛠️ Admin panel for user banning and moderation
+- 🌐 Uses **RAWG.IO** API for external videogame data  
 
 ---
 
@@ -39,6 +40,7 @@ Ztreamgames is a full-stack web application that simulates a modern video game d
 - **Backend:** Node.js, Express, MongoDB
 - **Auth:** JWT, Google OAuth
 - **Payments:** MercadoPago SDK
+- **API Consumption:** RAWG.IO
 - **Other:** Mongoose, dotenv, bcrypt, etc.
 
 ---
@@ -72,11 +74,11 @@ cd Ztreamgames
 ```bash
 # client
 cd client
-npm i
+npm install
 
 # api
-cd api
-npm i
+cd ../api
+npm install
 
 ```
 
@@ -99,12 +101,12 @@ COURRIER_API_KEY=your_courrier_api_key
 ### 📦 4. Run Locally
 
 ```bash
-# client
-cd client
+# Start backend
+cd api
 npm start
 
-# api
-cd api
+# Start frontend
+cd ../client
 npm start
 
 ```

@@ -23,7 +23,7 @@ const allGames = async (req, res, next) => {
       res.status(200).json(resultBD)
     } else {
       const info1 = await axios.get(
-        `https://api.rawg.io/api/games?key=8f18e9d52c1a4529b8ffba93f32936dd&page_size=40`
+        `https://api.rawg.io/api/games?key=${API_KEY}&page_size=40`
       );
       const info2 = await axios.get(info1.data.next);
       const info3 = await axios.get(info2.data.next);
